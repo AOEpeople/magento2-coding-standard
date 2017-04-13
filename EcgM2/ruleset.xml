@@ -130,7 +130,7 @@
     <rule ref="PEAR.Commenting.FunctionComment"/>
     <!-- File Comments are not widely used in the Magento Community, but we want a Class Comment Block -->
     <exclude name="PEAR.Commenting.FileComment"/>
-    <rule ref="Ecg.Commenting.ClassComment"/>
+    <rule ref="PEAR.Commenting.ClassComment"/>
     <!-- Tests that the asterisks in a doc comment align correctly -->
     <rule ref="Squiz.Commenting.DocCommentAlignment"/>
     <!-- Checks syntactical Usage of Logical Operators in Conditions -->
