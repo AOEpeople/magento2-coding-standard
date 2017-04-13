@@ -1,5 +1,5 @@
 {
-    "name": "magento-ecg/coding-standard",
+    "name": "aoepeople/magento2-coding-standard",
     "description": "A set of PHP_CodeSniffer rules and sniffs.",
     "homepage": "https://github.com/magento-ecg/coding-standard",
     "license": "MIT",
