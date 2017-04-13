@@ -12,8 +12,6 @@
     <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
     <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
     <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
-    <rule ref="Generic.Commenting.Fixme"/>
-    <rule ref="Generic.Commenting.Todo"/>
     <rule ref="Generic.Files.ByteOrderMark"/>
     <rule ref="Generic.Files.OneClassPerFile"/>
     <rule ref="Generic.Files.OneInterfacePerFile"/>
@@ -29,7 +27,6 @@
 
     <rule ref="Squiz.Functions.GlobalFunction"/>
     <rule ref="Squiz.Operators.IncrementDecrementUsage"/>
-    <rule ref="Squiz.PHP.DiscouragedFunctions"/>
     <rule ref="Squiz.PHP.Eval"/>
     <rule ref="Squiz.PHP.GlobalKeyword"/>
     <rule ref="Squiz.PHP.NonExecutableCode"/>
@@ -61,5 +58,108 @@
 
     <rule ref="EcgM2.Templates.ThisInTemplate">
         <exclude-pattern>*.php</exclude-pattern>
+    </rule>
+
+    <!-- ### AOE Additions ### -->
+
+    <!-- PHP files should contain an empty line at the end of the file -->
+    <rule ref="Generic.Files.EndFileNewline"/>
+    <!-- Tweak the line length limit -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="200"/>
+            <property name="absoluteLineLimit" value=""/>
+        </properties>
+    </rule>
+    <!-- Allow only unix file endings (newlines) -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+    <!-- Show Warnings for Comments of Unready Code, but dont set as error -->
+    <rule ref="Generic.Commenting.Fixme">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Generic.Commenting.Todo">
+        <severity>0</severity>
+    </rule>
+    <!-- Verifies that inline control statements are not present. -->
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+        <exclude-pattern>*\.(?!phtml$)</exclude-pattern>
+    </rule>
+    <!-- Disallow multiple Statements per Line -->
+    <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+    <!-- PHP code MUST contain space after cast tokens -->
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <!-- PHP constructor MUST be named __construct -->
+    <rule ref="Generic.NamingConventions.ConstructorName"/>
+    <!-- PHP constants MUST be in upper case -->
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+    <!-- PHP code MUST NOT contain any short opening tag like <? instead of proper <?php -->
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+    <!-- PHP code MUST NOT contain alias functions that are kept in PHP for compatibility with older versions-->
+    <rule ref="Generic.PHP.ForbiddenFunctions"/>
+    <!-- The PHP constants true, false, and null MUST be in lower case. -->
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+    <!-- PHP keywords MUST be in lower case. I.e. const -->
+    <rule ref="Generic.PHP.LowerCaseKeyword"/>
+    <!-- Code MUST use an indent of 4 spaces -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+    <!-- Code MUST NOT use tabs for indenting. -->
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+    <!-- Braces after function MUST be in newline -->
+    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+    <!-- PHP code MUST contain properly declared classes and functions -->
+    <rule ref="PEAR.Classes.ClassDeclaration"/>
+    <!-- PHP code MUST NOT contain perl-style comments -->
+    <rule ref="PEAR.Commenting.InlineComment"/>
+    <!-- Correct Formatting of Control Signatures -->
+    <rule ref="PEAR.ControlStructures.ControlSignature"/>
+    <!-- Correct Formatting of Function Calls -->
+    <rule ref="PEAR.Functions.FunctionCallSignature"/>
+    <!-- Checks Function Parameters Declaration for Default Values -->
+    <rule ref="PEAR.Functions.ValidDefaultValue"/>
+    <!-- Checks Indentation of Object Method Chaining -->
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent"/>
+    <!-- Checks correct Position of Closing Braces in Classes, Functions, Control Signatures... Exclude Phtml Files. -->
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace">
+        <exclude-pattern>*\.(?!phtml$)</exclude-pattern>
+    </rule>
+    <!-- Check Function Comments for correct Format -->
+    <rule ref="PEAR.Commenting.FunctionComment"/>
+    <!-- File Comments are not widely used in the Magento Community, but we want a Class Comment Block -->
+    <exclude name="PEAR.Commenting.FileComment"/>
+    <rule ref="Ecg.Commenting.ClassComment"/>
+    <!-- Tests that the asterisks in a doc comment align correctly -->
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+    <!-- Checks syntactical Usage of Logical Operators in Conditions -->
+    <rule ref="Squiz.Operators.ValidLogicalOperators"/>
+    <!-- Correct Usage of this in Static Members -->
+    <rule ref="Squiz.Scope.StaticThisUsage"/>
+    <!-- Correct Usage of echo and Formatting of strings to be echoed -->
+    <rule ref="Squiz.Strings.EchoedStrings">
+        <exclude-pattern>*\.(?!phtml$)</exclude-pattern>
+    </rule>
+    <!-- Checks Spacing around Logical Operators in Conditions -->
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+    <!-- There MUST NOT be trailing whitespace at the end of non-blank lines. -->
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
+        <severity>0</severity>
+    </rule>
+    <!-- Show Warnings on Discouraged Functions like error_log, print_r and var_dump -->
+    <rule ref="Squiz.PHP.DiscouragedFunctions">
+        <severity>0</severity>
     </rule>
 </ruleset>
