@@ -15,14 +15,14 @@ It allows automatically check your code against some of the common Magento and P
 
 and many others.
 
-####Update: Magento 2 standard just released. Try it out:
+#### Update: Magento 2 standard just released. Try it out:
 
 ```sh
 $ phpcs --config-set installed_paths ./vendor/magento-ecg/coding-standard
 $ phpcs --standard=EcgM2 /path/to/code
 ```
 
-#Installation & Usage
+# Installation & Usage
 
 Before starting using our coding standard install [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer).
 
@@ -50,12 +50,12 @@ $ phpcs --standard=EcgM2 /path/to/code
 
 PHP CodeSniffer will automatically scan Magento PHP files. To check design templates, you can specify `phtml` in the `--extensions` argument: `--extensions=php,phtml`.
 
-#Requirements
+# Requirements
 
 PHP 5.4 and up.
 
 Checkout the `php-5.3-compatible` branch to get the PHP 5.3 version.
 
-#Contribution
+# Contribution
 
 Please feel free to contribute new sniffs or any fixes or improvements for the existing ones.
